@@ -11,17 +11,21 @@
  */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { BrowserRouter } from "react-router-dom";
+import { useOktaAuth } from '@okta/okta-react';
+import { toRelativeUrl } from '@okta/okta-auth-js';
+import { Outlet } from 'react-router-dom';
+import Loading from './Loading';
 
+export const RequiredAuth: React.FC = () => {
+  const { oktaAuth, authState } = useOktaAuth();
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  if (!authState || !authState?.isAuthenticated) {
+    const originalUri = toRelativeUrl(window.location.href, window.location.origin);
+    oktaAuth.setOriginalUri(originalUri);
+    oktaAuth.signInWithRedirect();
+
+    return (<Loading />);
+  }
+
+  return (<Outlet />);
+}

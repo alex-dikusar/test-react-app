@@ -11,17 +11,15 @@
  */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { BrowserRouter } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
+const Nav = () => {
+  return (
+    <nav>
+      <Link id='home-nav-link' to='/'>Home</Link>
+      <Link id='protected-nav-link' to='/protected'>Protected</Link>
+    </nav>
+  );
+};
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+export default Nav;
