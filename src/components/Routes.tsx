@@ -24,8 +24,11 @@ const AppRoutes = () => {
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='login/callback' element={<LoginCallback loadingElement={<Loading />} />} />
-      <Route path='/protected' element={<RequiredAuth />}>
-        <Route path='' element={<Protected />} />
+      <Route path='/protected' element={
+        <RequiredAuth>
+          <Protected />
+        </RequiredAuth>
+      }>
       </Route>
     </Routes>
   );

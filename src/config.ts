@@ -10,19 +10,12 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
-const CLIENT_ID = process.env.REACT_APP_OKTA_ISSUER || '{clientId}';
-const ISSUER = process.env.REACT_APP_OKTA_CLIENT_ID || 'https://{yourOktaDomain}.com/oauth2/default';
-const OKTA_TESTING_DISABLEHTTPSCHECK = process.env.OKTA_TESTING_DISABLEHTTPSCHECK || false;
-const BASENAME = process.env.PUBLIC_URL || '';
-const REDIRECT_URI = `${window.location.origin}${BASENAME}/login/callback`;
-
 export default {
   oidc: {
-    clientId: CLIENT_ID,
-    issuer: ISSUER,
-    redirectUri: REDIRECT_URI,
-    scopes: ['openid', 'profile', 'email'],
+    issuer: process.env.REACT_APP_OKTA_ISSUER,
+    clientId: process.env.REACT_APP_OKTA_CLIENT_ID,
+    redirectUri: `${window.location.origin}/login/callback`,
+    scopes: ['openid', 'email', 'profile'],
     pkce: true,
-    disableHttpsCheck: OKTA_TESTING_DISABLEHTTPSCHECK,
   }
 };

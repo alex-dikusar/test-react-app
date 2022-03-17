@@ -16,8 +16,9 @@ import { toRelativeUrl } from '@okta/okta-auth-js';
 import { Outlet } from 'react-router-dom';
 import Loading from './Loading';
 
-export const RequiredAuth: React.FC = () => {
+export const RequiredAuth: React.FC = ({ children }: any) => {
   const { oktaAuth, authState } = useOktaAuth();
+  console.warn(oktaAuth, authState);
 
   if (!authState || !authState?.isAuthenticated) {
     const originalUri = toRelativeUrl(window.location.href, window.location.origin);
@@ -27,5 +28,5 @@ export const RequiredAuth: React.FC = () => {
     return (<Loading />);
   }
 
-  return (<Outlet />);
+  return children;
 }
