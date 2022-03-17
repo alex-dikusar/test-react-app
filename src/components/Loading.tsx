@@ -11,17 +11,11 @@
  */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { BrowserRouter } from "react-router-dom";
 
+const Loading: React.FC = () => {
+  return (
+    <h3 id='loading-icon'>Loading...</h3>
+  );
+};
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+export default Loading;

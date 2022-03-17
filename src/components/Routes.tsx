@@ -11,17 +11,24 @@
  */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { BrowserRouter } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
+import { LoginCallback } from '@okta/okta-react';
+import { RequiredAuth } from './SecureRoute';
 
+import Home from '../pages/Home';
+import Protected from '../pages/Protected';
+import Loading from './Loading';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='login/callback' element={<LoginCallback loadingElement={<Loading />} />} />
+      <Route path='/protected' element={<RequiredAuth />}>
+        <Route path='' element={<Protected />} />
+      </Route>
+    </Routes>
+  );
+};
+
+export default AppRoutes;

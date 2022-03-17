@@ -11,17 +11,15 @@
  */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { BrowserRouter } from "react-router-dom";
+import logo from '../assets/logo.svg';
 
+const Protected = () => {
+  return (
+    <>
+      <h1 className='page-header'>Protected</h1>
+      <img src={logo} className="App-logo" alt="logo" />
+    </>
+  );
+};
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+export default Protected;
