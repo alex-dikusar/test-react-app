@@ -35,7 +35,8 @@ code {
   }
 }
 
-.App-link, a {
+.App-link,
+a {
   color: #61dafb;
   padding: 0 5px;
 }

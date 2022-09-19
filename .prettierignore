@@ -1,0 +1,10 @@
+# Ignore artifacts:
+build/
+node_modules/
+internals/
+package-lock.json
+yarn.lock
+package.json
+tsconfig.json
+.vscode/
+.idea/
