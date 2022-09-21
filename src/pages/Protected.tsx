@@ -1,13 +1,8 @@
 import React from 'react';
-import logo from '../assets/logo.svg';
+import Typography from '@mui/material/Typography';
 
 function Protected() {
-  return (
-    <>
-      <h1 className="page-header">Protected</h1>
-      <img src={logo} className="App-logo" alt="logo" />
-    </>
-  );
+  return <Typography variant="h1">Protected</Typography>;
 }
 
 export default Protected;

@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Layout from './Layout';
 
-test('renders learn react link', () => {
+test('renders layout', () => {
   render(
     <BrowserRouter>
-      <App />
+      <Layout />
     </BrowserRouter>,
   );
-  expect(screen.getByTestId('app')).toBeInTheDocument();
+  expect(screen.getByTestId('layout')).toBeInTheDocument();
 });

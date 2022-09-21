@@ -1,13 +1,8 @@
 import React from 'react';
-import logo from '../assets/logo.svg';
+import Typography from '@mui/material/Typography';
 
 function Home() {
-  return (
-    <>
-      <h1 className="page-header">Home</h1>
-      <img src={logo} className="App-logo" alt="logo" />
-    </>
-  );
+  return <Typography variant="h1">Home</Typography>;
 }
 
 export default Home;
