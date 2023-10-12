@@ -36,13 +36,16 @@ export const counterSlice = createSlice({
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
+      // eslint-disable-next-line no-param-reassign
       state.value += 1;
     },
     decrement: (state) => {
+      // eslint-disable-next-line no-param-reassign
       state.value -= 1;
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
     incrementByAmount: (state, action: PayloadAction<number>) => {
+      // eslint-disable-next-line no-param-reassign
       state.value += action.payload;
     },
   },
@@ -51,13 +54,17 @@ export const counterSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(incrementAsync.pending, (state) => {
+        // eslint-disable-next-line no-param-reassign
         state.status = 'loading';
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
+        // eslint-disable-next-line no-param-reassign
         state.status = 'idle';
+        // eslint-disable-next-line no-param-reassign
         state.value += action.payload;
       })
       .addCase(incrementAsync.rejected, (state) => {
+        // eslint-disable-next-line no-param-reassign
         state.status = 'failed';
       });
   },
