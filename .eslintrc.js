@@ -24,7 +24,7 @@ module.exports = {
       ],
     },
     {
-      files: ['**/*.spec.*', 'src/setupTests.*'],
+      files: ['**/*.spec.*', 'src/setupTests.*', 'vite.config.ts'],
       rules: { 'import/no-extraneous-dependencies': 'off' },
     },
   ],
@@ -36,11 +36,16 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'prettier/prettier': ['error', prettierOptions],
     'react/react-in-jsx-scope': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
   },
   settings: {
     'import/resolver': {
-      node: { extensions: ['.js', '.jsx', '.ts', '.tsx'], paths: ['.'] },
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+        paths: ['.'],
+      },
     },
   },
 };

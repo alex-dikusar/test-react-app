@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "vite",
+    "start:prod": "vite --mode=prod",
     "build": "vite build",
+    "build:prod": "vite build --mode=prod",
     "test": "vitest",
     "test:ci": "vitest --run",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
@@ -15,6 +17,10 @@
     "type:check": "tsc"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.13",
+    "@mui/material": "^5.14.13",
     "@reduxjs/toolkit": "^1.9.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
