@@ -11,7 +11,7 @@ function Header() {
     <AppBar>
       <Toolbar>
         <Stack direction="row" alignItems="center" gap={1}>
-          AAAA
+          Settings
           <IconButton>
             <SettingsOutlinedIcon />
           </IconButton>

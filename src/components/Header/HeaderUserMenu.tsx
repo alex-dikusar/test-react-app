@@ -12,7 +12,7 @@ function HeaderUserMenu() {
 
   return (
     <>
-      AAAA
+      User
       <IconButton
         id="user-menu-btn"
         aria-controls="user-menu"
