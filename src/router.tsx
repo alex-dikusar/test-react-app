@@ -1,9 +1,16 @@
-import { createBrowserRouter } from 'react-router-dom';
-import App from './App';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { AppLayout } from '@/components/AppLayout';
+import { PeoplePage } from '@/pages/PeoplePage';
+import { TodosPage } from '@/pages/TodosPage';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <AppLayout />,
+    children: [
+      { index: true, element: <Navigate to="/todos" replace /> },
+      { path: 'todos', element: <TodosPage /> },
+      { path: 'people', element: <PeoplePage /> },
+    ],
   },
 ]);
